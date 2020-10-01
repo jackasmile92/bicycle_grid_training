@@ -3,13 +3,15 @@ html {
   padding: 0px;
   margin: 0px;
   cursor: default;
+  background-color: #848789;
 }
 
 :focus {
   outline: none;
 }
 
-button, a {
+button,
+a {
   cursor: pointer;
 }
 
@@ -21,10 +23,11 @@ button, a {
 .header {
   width: 1024px;
   background-image: url("../src/img/header_img.png");
-  background-size: auto cover;
+  background-size: auto auto;
   background-position-x: center;
   background-position-y: top;
   height: 100vh;
+  max-height: 800px;
   display: grid;
   justify-content: center;
 }
@@ -68,4 +71,103 @@ button, a {
 .header__logo-container {
   margin-right: 65px;
   margin-left: 65px;
+}
+
+.intro {
+  width: 1024px;
+  min-height: 469px;
+  background-color: #f7f7f7;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+}
+
+.intro__tittle {
+  margin-top: 34px;
+  color: #353738;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.intro__tittle-decor {
+  letter-spacing: 3.6px;
+}
+
+.intro__logo {
+  margin-top: 117px;
+  width: 52px;
+  height: 43px;
+}
+
+.intro__logo-item {
+  width: inherit;
+  height: inherit;
+}
+
+.intro__text {
+  margin-top: 35px;
+  margin-bottom: 142px;
+  max-width: 1079px;
+  max-width: 600px;
+  color: #848789;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 34px;
+  text-align: center;
+}
+
+.bikes {
+  width: 1024px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.bikes__logo {
+  height: 100vh;
+  max-height: 600px;
+}
+
+.bikes__logo--big {
+  grid-column: span 2;
+}
+
+.bikes__logo--big:nth-child(1) {
+  background-image: url("../src/img/Layer_10.png");
+  background-size: inherit auto;
+}
+
+.bikes__item {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-content: space-between;
+  background-color: white;
+  padding: 0;
+  height: 100vh;
+  max-height: 600px;
+  width: 341.33333px;
+}
+
+.bikes__item-bottom {
+  width: 341.33333px;
+  height: 200px;
+}
+
+.bikes__item-bottom--first {
+  background-image: url("../src/img/Layer_11.png");
+  background-position: center;
+  background-size: auto 200px;
+}
+
+.bikes__item-decor {
+  margin: 0 auto;
+  width: 30px;
+}
+
+.bikes__item-text {
+  width: 200px;
 }
