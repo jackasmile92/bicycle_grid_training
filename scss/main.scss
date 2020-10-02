@@ -1,4 +1,5 @@
-$main_width:1024px;
+//$main_width:1024px;
+$main_width:100vw;
 $onethird_width:$main_width/ 3;
 
 $backgroung_color_gray: #f7f7f7;
@@ -12,6 +13,7 @@ html {
     margin: 0px;
     cursor: default;
     background-color: $font_color_text;
+    overflow-x: hidden;
 }
 
 :focus {
@@ -25,17 +27,18 @@ a {
 
 .page-container {
     width: $main_width;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
 .header {
-    width: $main_width;
+    width: 100%;
     background-image: url('../src/img/header_img.png');
-    background-size: auto auto;
-    background-position-x: center;
-    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 100vh;
-    max-height: 800px;
+    max-height: 600px;
 
     display: grid;
     justify-content: center;
@@ -83,7 +86,7 @@ a {
 }
 
 .intro {
-    width: $main_width;
+    width: 100%;
     min-height: 469px;
     background-color: $backgroung_color_gray;
     display: grid;
@@ -107,6 +110,7 @@ a {
         margin-top: 117px;
         width: 52px;
         height: 43px;
+        background-color: $backgroung_color_gray;
 
         &-item {
             width: inherit;
@@ -117,70 +121,129 @@ a {
     &__text {
         margin-top: 35px;
         margin-bottom: 142px;
-        max-width: 1079px;
-        max-width: 600px;
+        max-width: 400px;
         color: $font_color_text;
         font-family: Lato;
+
         font-size: 18px;
         font-weight: 400;
         line-height: 34px;
         text-align: center;
     }
+
 }
 
 .bikes {
-   // background-color: $backgroung_color_white;
-    width: $main_width;
+    background-color: $backgroung_color_gray;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 
     &__logo {
-        height: 100vh;
-        max-height: 600px;
+        margin-top: -5px;
+        height: auto;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
 
         &--big {
             grid-column: span 2;
+        }
 
-            &:nth-child(1) {
-                background-image: url('../src/img/Layer_10.png');
-                background-size: inherit auto;
-
-            }
+        &-img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
     }
 
     &__item {
+        margin-top: -5px;
         display: grid;
         justify-content: center;
         justify-items: center;
-        align-content: space-between;
         background-color: $backgroung_color_white;
-        padding: 0;
 
-        height: 100vh;
-        max-height: 600px;
-        width: $onethird_width;
+        &-text {
+            color: $font_color_text;
+            font-family: Lato;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 29.99px;
+            margin-left: 69px;
+            margin-right: 69px;
+            margin-bottom: 103px;
+        }
 
-        &-bottom{
-            width: $onethird_width;
-            height: 200px;
-            
-            &--first{       
-                background-image: url('../src/img/Layer_11.png');
-                background-position: center;
-                background-size: auto 200px;
+        @media screen and (max-width: 1440px) {
+            &-text {
+                font-size: 12px;
+                line-height: 20px;
+                margin-bottom: 50px;
+            }
+
+            &-tittle {
+                font-size: 14px;
+                margin-top: 10px;
+                margin-bottom: 16px;
+
+                & span {
+                    letter-spacing: normal;
+                }
+            }
+
+            &-img {
+                margin-top: 38px;
+            }
+
+
+        }
+
+
+        &-img {
+            margin-top: 58px;
+            height: 41px;
+            width: auto;
+        }
+
+        &-tittle {
+            margin-top: 20px;
+            margin-bottom: 26px;
+            color: $font_color_title;
+            font-family: Lato;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            & span {
+                letter-spacing: 3.6px;
             }
         }
 
-        &-decor{
-            margin: 0 auto;
-            width: 30px;
+        &-bottom {
+            justify-items: center;
+            align-self: end;
+            position: relative;
+            width: 100%;
         }
 
-        &-text{
-            width: 200px;
+        &-bimg {
+            width: 100%;
+            height: auto;
+        }
+
+        &-decor {
+            position: absolute;
+            left: 50%;
+
+            & svg {
+                margin-left: -10px;
+                margin-top: -2px;
+            }
         }
     }
-
 }
