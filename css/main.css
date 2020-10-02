@@ -1,3 +1,10 @@
+.bikes__logo-img, .shop__gallery-link, .shop__bottom-button button, .footer__socials-logo img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 body,
 html {
   padding: 0px;
@@ -148,13 +155,6 @@ a {
   grid-column: span 2;
 }
 
-.bikes__logo-img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .bikes__item {
   display: grid;
   justify-content: center;
@@ -265,6 +265,10 @@ a {
   font-weight: 700;
 }
 
+.tweet__tittle:hover {
+  cursor: pointer;
+}
+
 .tweet__user-acc {
   font-family: "Lato - Bold";
   letter-spacing: 1.8px;
@@ -309,6 +313,10 @@ a {
   border-radius: 20px;
 }
 
+.tweet__nav-item:hover {
+  cursor: pointer;
+}
+
 .tweet__nav-item--active {
   background-color: #a9afb3;
 }
@@ -325,10 +333,6 @@ a {
 }
 
 .shop__gallery-link {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   width: 98px;
 }
 
@@ -364,6 +368,10 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.shop__gallery-item--active:hover {
+  cursor: pointer;
 }
 
 .shop__gallery-item:nth-child(1) {
@@ -404,4 +412,156 @@ a {
 .shop__gallery-item:nth-child(8) {
   grid-column: 6 / 7;
   grid-row: 2;
+}
+
+.shop__bottom {
+  width: 100%;
+  height: 200px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-areas: '. shop_but .';
+  background-color: #282f35;
+}
+
+.shop__bottom-button {
+  grid-area: shop_but;
+  position: relative;
+}
+
+.shop__bottom-button-text {
+  /* Text style for "DISCOVER T" */
+  letter-spacing: 2.8px;
+}
+
+.shop__bottom-button button {
+  width: 300px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: #282f35;
+  color: white;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.feedback {
+  width: 100%;
+  height: 469px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-areas: '. form .';
+  background-color: white;
+}
+
+.feedback__content {
+  grid-area: form;
+  width: 534px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding-top: 109px;
+  padding-bottom: 111px;
+}
+
+.feedback__text {
+  color: #848789;
+  font-family: Lato;
+  font-size: 24px;
+  line-height: 34px;
+  font-style: italic;
+}
+
+.feedback__logo-img {
+  width: 94px;
+  height: 85px;
+}
+
+.feedback__form {
+  display: flex;
+  align-items: center;
+}
+
+.feedback__button {
+  width: 126px;
+  height: 74px;
+  background-color: #64c29e;
+  border: none;
+  color: white;
+  font-family: Lato;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin-left: 8px;
+}
+
+.feedback__input {
+  width: 372px;
+  height: 69px;
+  border: 1px solid #64c29e;
+  background-color: white;
+  font-family: Lato;
+  font-size: 20px;
+  line-height: 24px;
+  padding-left: 28px;
+}
+
+.feedback__input::placeholder {
+  color: #929292;
+  font-family: Lato;
+  font-size: 20px;
+  line-height: 24px;
+  font-style: italic;
+}
+
+.footer {
+  width: 100%;
+  height: 250px;
+  background-color: #f7f7f7;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 3fr;
+  grid-template-areas: '. footer__info  footer__socials .';
+}
+
+.footer__info {
+  grid-area: footer__info;
+  display: grid;
+  align-content: center;
+  color: #848789;
+}
+
+.footer__info-item {
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 17.87px;
+}
+
+.footer__info-item:nth-child(1) {
+  font-weight: bold;
+}
+
+.footer__info-item:nth-child(3) {
+  font-style: italic;
+}
+
+.footer__socials {
+  grid-area: footer__socials;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: repeat(3, 35px);
+  grid-gap: 15px;
+}
+
+.footer__socials-logo {
+  position: relative;
+  width: 35px;
+  height: 34px;
+}
+
+.footer__socials-logo img {
+  width: 35px;
+  height: 34px;
 }
