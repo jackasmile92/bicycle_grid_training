@@ -7,6 +7,7 @@ $backgroung_color_white: white;
 $font_color_title: #353738;
 $font_color_text:#848789;
 
+$nav_button_active: #a9afb3;
 body,
 html {
     padding: 0px;
@@ -90,8 +91,20 @@ a {
     min-height: 469px;
     background-color: $backgroung_color_gray;
     display: grid;
-    justify-content: center;
-    justify-items: center;
+
+
+    grid-template-columns: 1fr 4fr 1fr;
+
+    grid-template-areas:
+        '. content .';
+
+    &__content {
+        grid-area: content;
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        max-width: 1079px;
+    }
 
     &__tittle {
         margin-top: 34px;
@@ -121,7 +134,6 @@ a {
     &__text {
         margin-top: 35px;
         margin-bottom: 142px;
-        max-width: 400px;
         color: $font_color_text;
         font-family: Lato;
 
@@ -238,9 +250,9 @@ a {
         &-decor {
             position: absolute;
             left: 50%;
+            transform: translate(-50%, 0);
 
             & svg {
-                margin-left: -10px;
                 margin-top: -2px;
             }
         }
@@ -259,4 +271,72 @@ a {
 
 .tweet {
     grid-area: tweet;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    max-width: 1036px;
+
+    &__logo {
+        margin-top: 124px;
+        margin-bottom: 37px;
+        width: 32px;
+        height: 27px;
+    }
+
+    &__tittle {
+        color: $font_color_title;
+        font-family: Lato;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    &__user {
+        &-acc {
+            font-family: "Lato - Bold";
+            letter-spacing: 1.8px;
+        }
+
+        &-time {
+            color: $font_color_text;
+            font-family: "Lato Light";
+            font-weight: 300;
+            letter-spacing: 1.8px;
+        }
+
+        &-space {
+            font-family: "Myriad Pro";
+            font-weight: 400;
+            letter-spacing: 1.8px;
+        }
+    }
+
+    &__text {
+        color: $font_color_text;
+        font-family: Lato;
+        font-size: 24px;
+        line-height: 34px;
+        font-style: italic;
+        margin-top: 27px;
+        margin-bottom: 104px;
+        text-align: center;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 51px;
+
+        margin-bottom: 68px;
+
+        &-item {
+            width: 11px;
+            height: 11px;
+            border: 1px solid $nav_button_active;
+            border-radius: 20px;
+            &--active{
+                background-color: $nav_button_active;
+            }
+        }
+    }
 }
